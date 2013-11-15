@@ -15,16 +15,33 @@ PickItUp.prototype.addOrder = function(orderNum) {
     }
 };
 
-PickItUp.prototype.removeIncompleteOrder = function(orderNumber) {
+PickItUp.prototype.removeIncompleteOrder = function(orderNum) {
+    if(orderNum){
+        this.ordersInProgress.remove(orderNum);
+    }
 };
 
-PickItUp.prototype.completeOrder = function(orderNumber) {
+PickItUp.prototype.completeOrder = function(orderNum) {
+    if(orderNum){
+        var order = this.ordersInProgress.getOrder(orderNum);
+        order.toCompleted();
+        this.ordersInProgress.remove(orderNum);
+        this.ordersCompleted.add(order);
+    }
 };
 
-PickItUp.prototype.serveOrder = function(orderNumber) {
+PickItUp.prototype.serveOrder = function(orderNum) {
+    if(orderNum){
+        var order = this.ordersCompleted.getOrder(orderNum);
+        order.completeOrder.toServed();
+        this.ordersCompleted.remove(orderNum);
+    }
 };
 
-PickItUp.prototype.removeOrder = function(orderNumber) {
+PickItUp.prototype.removeOrder = function(orderNum) {
+    if(orderNum){
+        this.ordersCompleted.remove(orderNum);
+    }
 };
 
 module.exports = PickItUp;

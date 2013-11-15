@@ -9,8 +9,9 @@ Orders.prototype.add = function(order) {
     }
 };
 
-Orders.prototype.remove = function(order) {
-    if (order){
+Orders.prototype.remove = function(orderNum) {
+    if (orderNum){
+        var order = this.orders.getOrder(orderNum)
         var index = this.orders.indexOf(order);
         if (index > -1) {
             this.orders.splice(index, -1);
