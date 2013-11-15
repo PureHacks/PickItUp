@@ -2,8 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/D/Work Documents/Nurun/Hackathon/OrderDisplay/App",
-			"name": "App",
+			"path": ".",
+			"name": "PickMeUp",
             "file_exclude_patterns": ["*.sublime-*"],
             "folder_exclude_patterns": [".tmp", "node_modules", "dist"]
 		}
