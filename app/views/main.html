@@ -1,0 +1,25 @@
+<div class="hero-unit">
+	<h1>Orders</h1>
+
+
+	<div>
+		<button ng-click="addNewOrder()">Add new Order</button>
+	</div>
+
+	<div class="order-in-progress-holder">
+		<p>Orders in progress</p>
+		<ul>
+			<li ng-repeat="inProgressNumber in inProgressNumbers">{{inProgressNumber}} <button ng-click="moveToPickup($index)" class="ready-for-pickup">Ready for pickup</button></li>
+		</ul>
+	</div>
+
+
+	<div class="order-pickup-holder">
+		<p>Orders ready for pickup</p>
+
+		<ul>
+			<li ng-repeat="pickUpNumber in pickUpNumbers">{{pickUpNumber}} <button ng-click="deleteOrder($index)" class="delete">Delete</button></li>
+		</ul>
+	</div>
+
+</div>
