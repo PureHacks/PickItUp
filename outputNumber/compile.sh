@@ -1,0 +1,1 @@
+gcc -o output_number output_number.c -lwiringPi
