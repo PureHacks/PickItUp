@@ -1,0 +1,59 @@
+/*fluid grid */
+.gridHolder { width:100%; max-width: 960px; }
+.row {float:left; clear:both; width:100%; }
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven, .twelve {box-sizing: border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+
+.row .centered { float: none; margin: 0 auto; }
+.row .no-margin-left, .row .no-margin {margin-left:0;}
+.row .no-margin-right, .row .no-margin {margin-right:0;}
+
+.row .insert-margin-left, .row .insert-margin {margin-left:0;}
+.row .insert-margin-right, .row .insert-margin {margin-right:0;}
+.one { float:left; width:6.25%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.two { float:left; width:14.583333333333334%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.three { float:left; width:22.916666666666664%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.four { float:left; width:31.25%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.five { float:left; width:39.58333333333333%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.six { float:left; width:47.91666666666667%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.seven { float:left; width:56.25%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.eight { float:left; width:64.58333333333334%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.nine { float:left; width:72.91666666666666%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.ten { float:left; width:81.25%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.eleven { float:left; width:89.58333333333334%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.twelve { float:left; width:97.91666666666666%; margin-right:1.0416666666666665%; margin-left:1.0416666666666665%; }
+.one.insert-margin { width:8.333333333333332%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.two.insert-margin { width:16.666666666666664%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.three.insert-margin { width:25%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.four.insert-margin { width:33.33333333333333%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.five.insert-margin { width:41.66666666666667%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.six.insert-margin { width:50%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.seven.insert-margin { width:58.333333333333336%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.eight.insert-margin { width:66.66666666666666%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.nine.insert-margin { width:75%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.ten.insert-margin { width:83.33333333333334%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.eleven.insert-margin { width:91.66666666666666%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.twelve.insert-margin { width:100%; margin-right:0; margin-left:0; padding-left:1.0416666666666665%;  padding-right:1.0416666666666665%;}
+.one.insert-margin-right { width:7.291666666666667%;  margin-right:0; padding-right:1.0416666666666665%; }
+.one.insert-margin-left { width:7.291666666666667%;  margin-left:0; padding-left:1.0416666666666665%; }
+.two.insert-margin-right { width:15.625%;  margin-right:0; padding-right:1.0416666666666665%; }
+.two.insert-margin-left { width:15.625%;  margin-left:0; padding-left:1.0416666666666665%; }
+.three.insert-margin-right { width:23.958333333333336%;  margin-right:0; padding-right:1.0416666666666665%; }
+.three.insert-margin-left { width:23.958333333333336%;  margin-left:0; padding-left:1.0416666666666665%; }
+.four.insert-margin-right { width:32.29166666666667%;  margin-right:0; padding-right:1.0416666666666665%; }
+.four.insert-margin-left { width:32.29166666666667%;  margin-left:0; padding-left:1.0416666666666665%; }
+.five.insert-margin-right { width:40.625%;  margin-right:0; padding-right:1.0416666666666665%; }
+.five.insert-margin-left { width:40.625%;  margin-left:0; padding-left:1.0416666666666665%; }
+.six.insert-margin-right { width:48.95833333333333%;  margin-right:0; padding-right:1.0416666666666665%; }
+.six.insert-margin-left { width:48.95833333333333%;  margin-left:0; padding-left:1.0416666666666665%; }
+.seven.insert-margin-right { width:57.291666666666664%;  margin-right:0; padding-right:1.0416666666666665%; }
+.seven.insert-margin-left { width:57.291666666666664%;  margin-left:0; padding-left:1.0416666666666665%; }
+.eight.insert-margin-right { width:65.625%;  margin-right:0; padding-right:1.0416666666666665%; }
+.eight.insert-margin-left { width:65.625%;  margin-left:0; padding-left:1.0416666666666665%; }
+.nine.insert-margin-right { width:73.95833333333334%;  margin-right:0; padding-right:1.0416666666666665%; }
+.nine.insert-margin-left { width:73.95833333333334%;  margin-left:0; padding-left:1.0416666666666665%; }
+.ten.insert-margin-right { width:82.29166666666666%;  margin-right:0; padding-right:1.0416666666666665%; }
+.ten.insert-margin-left { width:82.29166666666666%;  margin-left:0; padding-left:1.0416666666666665%; }
+.eleven.insert-margin-right { width:90.625%;  margin-right:0; padding-right:1.0416666666666665%; }
+.eleven.insert-margin-left { width:90.625%;  margin-left:0; padding-left:1.0416666666666665%; }
+.twelve.insert-margin-right { width:98.95833333333334%;  margin-right:0; padding-right:1.0416666666666665%; }
+.twelve.insert-margin-left { width:98.95833333333334%;  margin-left:0; padding-left:1.0416666666666665%; }

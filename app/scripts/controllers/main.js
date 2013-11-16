@@ -23,4 +23,11 @@ angular.module('orderDisplayApp')
 		$scope.deleteOrder = function(index){
 			$scope.pickUpNumbers.splice(index, 1);
 		};
+
+
+		//dev only
+		$scope.addNewOrder();
+		$scope.addNewOrder();
+		$scope.addNewOrder();
+		$scope.moveToPickup(1);
 	});
