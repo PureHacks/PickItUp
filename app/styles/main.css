@@ -5,7 +5,7 @@ button:active, button:focus {outline: 0;}
 
 header {position: fixed; z-index: 1; height: 70px; width: 100%; background: #fff; border-bottom:solid 2px #443327;}
 header h1 {float: left; color: #72bf44; margin: 15px 0; font: bold 30px/40px "Quicksand"; text-transform: uppercase;}
-header h1 .logo {float: left; margin: 0 0.5em 0 0; width: 32px; height: 40px; background: url("/img/sprite.png") 0 0 no-repeat;}
+header h1 .logo {float: left; margin: 0 0.5em 0 0; width: 32px; height: 40px; background: url("/assets/img/sprite.png") 0 0 no-repeat;}
 header .date-time-holder {float: right; text-align: right; margin-top:10px; margin-bottom:10px; font-size: 17px; color: #7c7061;}
 header .date-time-holder span {line-height: 50px; display: inline-block; padding-left: 1em;}
 header .date-time-holder .date {border-right: solid 1px #d7d9d0;  padding-right: 1em;}
@@ -31,7 +31,7 @@ header .date-time-holder .date {border-right: solid 1px #d7d9d0;  padding-right:
 .list-holder ul li {margin:0;  padding:0; line-height: 70px; list-style: none; border-top:solid 1px #d7d9d0; font-size: 30px; font-weight: bold; color: #7c7061;}
 .list-holder ul li:first-child {border-top:0;}
 .list-holder ul li button {padding: 15px 0; margin:0 0 0 0.5em; min-width: 75%; background: 0; border:0; float: right; display: inline-block; line-height: 40px; text-align: right; color: #4cae11; letter-spacing: -0.1px;}
-.list-holder ul li button i {float: right; margin: 0 0 0 0.5em; width: 40px; height: 40px; background-image: url("/img/sprite.png");}
+.list-holder ul li button i {float: right; margin: 0 0 0 0.5em; width: 40px; height: 40px; background-image: url("/assets/img/sprite.png");}
 
 .order-in-progress-holder button i {background-position: -52px 0;}
 .order-pickup-holder button i {background-position: -172px 0;}

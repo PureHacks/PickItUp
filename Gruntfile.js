@@ -1,5 +1,14 @@
-// Generated on 2013-11-03 using generator-angular 0.5.1
+// Generated on 2013-07-31 using generator-angular 0.3.1
 'use strict';
+
+// no more needed, see grunt-express doc
+//var LIVERELOAD_PORT = 35729;
+//var lrSnippet = require('express-livereload')({ port: LIVERELOAD_PORT });
+//var mountFolder = function (express, dir) {
+//  return express.static(require('path').resolve(dir));
+//};
+
+var path = require('path');
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -8,15 +17,21 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-	require('load-grunt-tasks')(grunt);
-	require('time-grunt')(grunt);
+	// load all grunt tasks
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+	// configurable paths
+	var yeomanConfig = {
+		app: 'app',
+		dist: 'dist'
+	};
+
+	try {
+		yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
+	} catch (e) {}
 
 	grunt.initConfig({
-		yeoman: {
-			// configurable paths
-			app: require('./bower.json').appPath || 'app',
-			dist: 'dist'
-		},
+		yeoman: yeomanConfig,
 		watch: {
 			coffee: {
 				files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
@@ -25,64 +40,86 @@ module.exports = function (grunt) {
 			coffeeTest: {
 				files: ['test/spec/{,*/}*.coffee'],
 				tasks: ['coffee:test']
-			},
-			styles: {
-				files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-				tasks: ['copy:styles', 'autoprefixer']
-			},
-			livereload: {
-				options: {
-					livereload: '<%= connect.options.livereload %>'
-				},
-				files: [
-					'<%= yeoman.app %>/{,*/}*.html',
-					'.tmp/styles/{,*/}*.css',
-					'{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-				]
 			}
+//      livereload: {
+//        options: {
+//          livereload: LIVERELOAD_PORT
+//        },
+//        files: [
+//          '<%= yeoman.app %>/{,*/}*.html',
+//          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+//          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+//          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+//        ]
+//      }
 		},
-		autoprefixer: {
-			options: ['last 1 version'],
-			dist: {
-				files: [{
-					expand: true,
-					cwd: '.tmp/styles/',
-					src: '{,*/}*.css',
-					dest: '.tmp/styles/'
-				}]
-			}
-		},
-		connect: {
+//    express: {
+//      options: {
+//        port: 9000,
+//        // Change this to '0.0.0.0' to access the server from outside.
+//        hostname: 'localhost'
+//      },
+//      livereload: {
+//        options: {
+//          middleware: function (express) {
+//            return [
+//              lrSnippet,
+//              mountFolder(express, '.tmp'),
+//              mountFolder(express, yeomanConfig.app)
+//            ];
+//          }
+//        }
+//      },
+//      test: {
+//        options: {
+//          middleware: function (express) {
+//            return [
+//              mountFolder(express, '.tmp'),
+//              mountFolder(express, 'test')
+//            ];
+//          }
+//        }
+//      },
+//      dist: {
+//        options: {
+//          middleware: function (express) {
+//            return [
+//              mountFolder(express, yeomanConfig.dist)
+//            ];
+//          }
+//        }
+//      }
+//    },
+		express: {
 			options: {
 				port: 9000,
 				// Change this to '0.0.0.0' to access the server from outside.
-				hostname: 'localhost',
-				livereload: 35729
+				hostname: 'localhost'
 			},
 			livereload: {
 				options: {
-					open: true,
-					base: [
-						'.tmp',
-						'<%= yeoman.app %>'
-					]
+					server: path.resolve('./app.js'),
+					livereload: true,
+					serverreload: false,
+					bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
 				}
 			},
 			test: {
 				options: {
-					port: 9001,
-					base: [
-						'.tmp',
-						'test',
-						'<%= yeoman.app %>'
-					]
+					server: path.resolve('./app.js'),
+					bases: [path.resolve('./.tmp'), path.resolve(__dirname, 'test')]
 				}
 			},
 			dist: {
 				options: {
-					base: '<%= yeoman.dist %>'
+					server: path.resolve('./app.js'),
+					bases: path.resolve(__dirname, yeomanConfig.dist)
 				}
+			}
+		},
+		open: {
+			server: {
+				url: 'http://localhost:<%= express.options.port %>'
 			}
 		},
 		clean: {
@@ -108,10 +145,6 @@ module.exports = function (grunt) {
 			]
 		},
 		coffee: {
-			options: {
-				sourceMap: true,
-				sourceRoot: ''
-			},
 			dist: {
 				files: [{
 					expand: true,
@@ -225,6 +258,7 @@ module.exports = function (grunt) {
 					dest: '<%= yeoman.dist %>',
 					src: [
 						'*.{ico,png,txt}',
+						'*.html', 'views/*.html',
 						'.htaccess',
 						'bower_components/**/*',
 						'images/{,*/}*.{gif,webp}',
@@ -238,29 +272,20 @@ module.exports = function (grunt) {
 						'generated/*'
 					]
 				}]
-			},
-			styles: {
-				expand: true,
-				cwd: '<%= yeoman.app %>/styles',
-				dest: '.tmp/styles/',
-				src: '{,*/}*.css'
 			}
 		},
 		concurrent: {
 			server: [
-				'coffee:dist',
-				'copy:styles'
+				'coffee:dist'
 			],
 			test: [
-				'coffee',
-				'copy:styles'
+				'coffee'
 			],
 			dist: [
 				'coffee',
-				'copy:styles',
 				'imagemin',
-				'svgmin',
-				'htmlmin'
+				'svgmin'
+				//'htmlmin'
 			]
 		},
 		karma: {
@@ -297,14 +322,14 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('server', function (target) {
 		if (target === 'dist') {
-			return grunt.task.run(['build', 'connect:dist:keepalive']);
+			return grunt.task.run(['build', 'open', 'express:dist:keepalive']);
 		}
 
 		grunt.task.run([
 			'clean:server',
 			'concurrent:server',
-			'autoprefixer',
-			'connect:livereload',
+			'express:livereload',
+			'open',
 			'watch'
 		]);
 	});
@@ -312,8 +337,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('test', [
 		'clean:server',
 		'concurrent:test',
-		'autoprefixer',
-		'connect:test',
+		'express:test',
 		'karma'
 	]);
 
@@ -321,9 +345,8 @@ module.exports = function (grunt) {
 		'clean:dist',
 		'useminPrepare',
 		'concurrent:dist',
-		'autoprefixer',
 		'concat',
-		'copy:dist',
+		'copy',
 		'cdnify',
 		'ngmin',
 		'cssmin',

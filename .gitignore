@@ -2,8 +2,5 @@ node_modules
 dist
 .tmp
 .sass-cache
+.log
 app/bower_components
-.idea/*
-.idea_modules/*
-atlassian-ide-plugin.xml
-*.iml

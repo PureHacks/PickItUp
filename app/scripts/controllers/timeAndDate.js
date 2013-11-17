@@ -3,12 +3,12 @@
 angular.module('orderDisplayApp')
 	.controller('TimeanddateCtrl', function ($scope, $timeout) {
 		
-
+		var timeoutId;
 		$scope.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 		$scope.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-		$scope.timeNow = "";
-		$scope.dateNow = "";
+		$scope.timeNow = '';
+		$scope.dateNow = '';
 		$scope.setTimeAndDate = function(){
 			var d = new Date();
 			var h = d.getHours();
@@ -20,10 +20,10 @@ angular.module('orderDisplayApp')
 			h = h < 10 ? '0' + h : h;
 			$scope.timeNow  = h + ':' + min + ' ' + ampm;
 
-			$scope.dateNow = $scope.days[d.getDay()] + ", " + $scope.months[d.getMonth()]  + " " + d.getDate();
-			$timeout($scope.setTimeAndDate, 1000);
+			$scope.dateNow = $scope.days[d.getDay()] + ', ' + $scope.months[d.getMonth()]  + ' ' + d.getDate();
+			timeoutId = $timeout($scope.setTimeAndDate, 1000);
 		};
 
 		$scope.setTimeAndDate();
-	});
 
+	});

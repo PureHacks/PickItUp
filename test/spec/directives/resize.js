@@ -2,19 +2,20 @@
 
 describe('Directive: resize', function () {
 
-  // load the directive's module
-  beforeEach(module('orderDisplayApp'));
+	// load the directive's module
+	beforeEach(module('orderDisplayApp'));
 
-  var element,
-    scope;
+	var element,
+		scope;
 
-  beforeEach(inject(function ($rootScope) {
-    scope = $rootScope.$new();
-  }));
+	beforeEach(inject(function ($rootScope) {
+		scope = $rootScope.$new();
+	}));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<resize></resize>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the resize directive');
-  }));
+	/*it('should change height', inject(function ($compile, $window) {
+		element = angular.element('<resize></resize>');
+		element = $compile(element)(scope);
+
+		expect(scope.screenHeight).toBe($window.outerHeight);
+	}));*/
 });

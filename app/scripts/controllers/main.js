@@ -26,8 +26,8 @@ angular.module('orderDisplayApp')
 
 
 		//dev only
+		/*$scope.addNewOrder();
 		$scope.addNewOrder();
 		$scope.addNewOrder();
-		$scope.addNewOrder();
-		$scope.moveToPickup(1);
+		$scope.moveToPickup(1);*/
 	});
