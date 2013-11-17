@@ -4,8 +4,64 @@
 		"selected_items":
 		[
 			[
+				"inne",
+				"innerHeight	.innerHeight"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"tor",
+				"border-top-left-radius"
+			],
+			[
+				"bor",
+				"border-bottom-style"
+			],
+			[
+				"table-",
+				"table-column"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
 				"ma",
-				"margin-right"
+				"margin-bottom"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"in",
+				"inline-block"
 			],
 			[
 				"body",
@@ -18,10 +74,6 @@
 			[
 				"rg",
 				"rgba()"
-			],
-			[
-				"te",
-				"text-align"
 			],
 			[
 				"sli",
@@ -48,10 +100,6 @@
 				"ife	if … else"
 			],
 			[
-				"min",
-				"min-width"
-			],
-			[
 				"error",
 				"errorMsg"
 			],
@@ -66,22 +114,6 @@
 			[
 				"bacground",
 				"background-colour"
-			],
-			[
-				"in",
-				"indexOf"
-			],
-			[
-				"pa",
-				"padding"
-			],
-			[
-				"fon",
-				"font-size"
-			],
-			[
-				"font-",
-				"font-weight"
 			],
 			[
 				"font",
@@ -156,14 +188,6 @@
 				"display"
 			],
 			[
-				"ba",
-				"background"
-			],
-			[
-				"bor",
-				"border-top-style"
-			],
-			[
 				"po",
 				"position"
 			],
@@ -184,10 +208,34 @@
 	"buffers":
 	[
 		{
-			"file": "order-display.sublime-project",
+			"file": "app/views/main.html",
 			"settings":
 			{
-				"buffer_size": 195,
+				"buffer_size": 1049,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/index.html",
+			"settings":
+			{
+				"buffer_size": 2483,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/styles/main.css",
+			"settings":
+			{
+				"buffer_size": 3828,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/directives/resize.js",
+			"settings":
+			{
+				"buffer_size": 371,
 				"line_ending": "Unix"
 			}
 		}
@@ -198,6 +246,22 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"pca",
+				"Package Control: Disable Package"
+			],
+			[
+				"disa",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"disab",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"deac",
+				"Indentation: Convert to Tabs"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -275,7 +339,7 @@
 				"Package Control: Add Repository"
 			]
 		],
-		"width": 512.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -292,6 +356,35 @@
 	},
 	"file_history":
 	[
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/scripts/controllers/main.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/scripts/app.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/scripts/controllers/timeAndDate.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/index.html",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/styles/main.css",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/styles/grid.css",
+		"/C/Users/Michael/Desktop/server.js",
+		"/C/Users/Michael/Downloads/gridpak/gridpak.css",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/styles/gridpak.css",
+		"/C/Users/Michael/Downloads/gridpak/demo/index.html",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/Gruntfile.js",
+		"/C/Users/Michael/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/package.json",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/.htaccess",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/karma.conf.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/karma-e2e.conf.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/test/runner.html",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/test/.jshintrc",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/test/spec/controllers/main.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/scripts/controllers/homescreen.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/404.html",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/.bowerrc",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/.editorconfig",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/.travis.yml",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/bower.json",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/.jshintrc",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/modules/order.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/modules/orders.js",
+		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/app/modules/pickMeUp.js",
 		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/git/PickMeUp/order-display.sublime-project",
 		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/piData/gpio test/node_modules/rpi-gpio/rpi-gpio.js",
 		"/D/Work Documents/Nurun/Hackathon/OrderDisplay/piData/gpio test/server.js",
@@ -390,36 +483,7 @@
 		"/D/Work Documents/Nurun/Stylify/repo/routes/about.js",
 		"/D/Work Documents/Nurun/Stylify/repo/public/stylesheets/style.css",
 		"/D/Work Documents/Nurun/Stylify/repo/public/javascripts/stylify.js",
-		"/D/Work Documents/Nurun/Stylify/repo/routes/phantom.js",
-		"/D/Work Documents/Nurun/Stylify/repo/.buildpacks",
-		"/D/Work Documents/Testbed/Play-apps/require-test/RUNNING_PID",
-		"/D/Work Documents/Testbed/Play-apps/require-test/public/stylesheets/main.css",
-		"/D/Work Documents/Testbed/Play-apps/require-test/require-test.sublime-project",
-		"/D/Work Documents/Nurun/Stylify/repo/stylify-crawler.js",
-		"/D/Work Documents/Nurun/Stylify/repo/routes/index.js",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/routes/index.js",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/public/stylesheets/style.css",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/routes/phantom.js",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/package.json",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/views/demo.html",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/views/layout.ejs",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/views/index.ejs",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/Procfile",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/web.js",
-		"/D/Work Documents/Nurun/Annabells Project/repo2/npm-debug.log",
-		"/D/Work Documents/Nurun/Annabells Project/html/css/960_16_col.css",
-		"/D/Work Documents/Nurun/Annabells Project/html/css/reset.css",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/single.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/content.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/style.css",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/page.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/page-templates/front-page.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/functions.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/sidebar.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/header.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/index.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/tag.php",
-		"/D/Work Documents/Private Projects/Park Teakwon-Do/website/xampp-portable/htdocs/wordpress/wp-content/themes/Itf-Ac/search.php"
+		"/D/Work Documents/Nurun/Stylify/repo/routes/phantom.js"
 	],
 	"find":
 	{
@@ -427,7 +491,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 			""
@@ -438,6 +502,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"homescreen",
+			"border",
+			"margin",
+			"column-header",
+			"fixed",
+			"hero-unit",
+			"copy:styles\n",
+			"copy:styles",
+			"grunt-contrib-imagemin",
+			"imagemin",
+			"imagemin.js",
+			"  ",
 			" export ",
 			"sysFsPath",
 			"PATH",
@@ -553,19 +629,7 @@
 			"circuit-interval",
 			"start",
 			"start\n",
-			"getRandomCircute",
-			"getAllBodiparts",
-			"db",
-			"getExcercises",
-			"setupDb",
-			"getExcercises",
-			"setupDb",
-			"each",
-			"init",
-			"start",
-			"success!",
-			"success",
-			"console.log(\"NEXT EXERCISE\");"
+			"getRandomCircute"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -573,6 +637,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"main-wrapper",
 			",",
 			" ,",
 			" ",
@@ -647,18 +712,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "order-display.sublime-project",
+					"file": "app/views/main.html",
 					"settings":
 					{
-						"buffer_size": 195,
+						"buffer_size": 1049,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								195,
-								195
+								863,
+								863
 							]
 						],
 						"settings":
@@ -752,7 +817,89 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/index.html",
+					"settings":
+					{
+						"buffer_size": 2483,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1645,
+								1645
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 75.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/styles/main.css",
+					"settings":
+					{
+						"buffer_size": 3828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2366,
+								2366
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 150.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/scripts/directives/resize.js",
+					"settings":
+					{
+						"buffer_size": 371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								204,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -808,6 +955,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"grid",
+				"app/styles/grid.css"
+			],
 			[
 				"css",
 				"css/index.css"

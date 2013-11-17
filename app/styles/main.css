@@ -1,5 +1,5 @@
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
-
+html, body { height: 100%;}
 body {background: #736255;  font:normal 30px/40px "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #333; }
 button:active, button:focus {outline: 0;}
 
@@ -10,8 +10,8 @@ header .date-time-holder {float: right; text-align: right; margin-top:10px; marg
 header .date-time-holder span {line-height: 50px; display: inline-block; padding-left: 1em;}
 header .date-time-holder .date {border-right: solid 1px #d7d9d0;  padding-right: 1em;}
 
-.center-content {max-width: 960px; margin: 0 auto; position: relative;}
-.main-content {clear: both;}
+.main-content {clear: both; min-height: 100%;}
+.center-content {max-width: 960px; min-height: 100%; margin: 0 auto; position: relative;}
 
 .main-wrapper-fixed, .main-wrapper {font-size: 18px; margin: 0 auto; font-weight: 200; line-height: 30px; background: #736255;}
 .main-wrapper-fixed {position: fixed; z-index: 1; top: 70px; width: 100%; max-width: 960px;}
@@ -19,11 +19,12 @@ header .date-time-holder .date {border-right: solid 1px #d7d9d0;  padding-right:
 
 .new-order-button { padding: 0 0.5em; color: #fff; border-radius: 5px; border:0; border-top: solid 1px #e1f2d4; border-bottom:solid 1px #54473e; background-color: #72bf44;  background-image: -moz-linear-gradient( 90deg, rgba( 0, 0, 0, 0.2) 0%, rgba( 255, 255, 255, 0.2) 100%); background-image: -webkit-linear-gradient( 90deg, rgba( 0, 0, 0, 0.2) 0%, rgba( 255, 255, 255, 0.2) 100%); box-shadow: 0px 1px 0px 0px rgba( 0, 0, 0 , 0.27); font:normal 38px/64px "Quicksand"; text-transform: uppercase; text-shadow: 0.5px 0.866px 0px rgb( 0, 0, 0 );}
 
+.container {min-height: 100%;}
 
 .new-order-button-holder {margin:35px 0 40px;}
 .column-header {border-radius:5px 5px 0 0; margin-top:0; margin-bottom: 0; padding:20px 2.08333333333333%; background: #dfdfdf; border-bottom: solid 2px #c4c7be; text-align: left; font-size: 30px; font-weight: normal; color: rgb( 124, 112, 97 ); text-transform: uppercase; }
 
-.lists-holder {display: table;}
+.lists-holder {display: table; min-height: 100%;}
 .list-holder {display: table-cell; float: none; position: relative; padding:25px 3.125% 0; width:50%;}
 .list-bg {z-index: 0; position: absolute; top: 0; left: 2.173913043478261%; right: 2.173913043478261%; bottom: 0; background: #f1f0ee;}
 .list-holder ul {z-index: 0; position: relative; margin:0; padding:0; list-style: none; background: #f1f0ee;}
@@ -39,11 +40,6 @@ header .date-time-holder .date {border-right: solid 1px #d7d9d0;  padding-right:
 .order-in-progress-holder {}
 .order-pickup-holder {}
 
-
-
-
-
-.temp-spacer {height: 1750px}
 
 .cf:before,
 .cf:after { content: " "; display: table;}

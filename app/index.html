@@ -33,17 +33,17 @@
 				<div class="row">
 					<h1 class="six"><i class="logo"></i>Pick me up</h1>
 
-					<div class="six date-time-holder">
-						<span class="date">Friday, November 15</span>
-						<span class="time">12:00pm</span>
+					<div class="six date-time-holder" ng-controller="TimeanddateCtrl">
+						<span class="date">{{dateNow}}</span>
+						<span class="time">{{timeNow}}</span>
 					</div>
 				</div>
 			</div>
 		</header>
 
 		<section class="main-content cf">
-			<div class="center-content">
-				<div class="container gridHolder" ng-view=""></div>
+			<div class="center-content cf">
+				<div class="container gridHolder cf" ng-view=""></div>
 			</div>
 		</section>
 		
@@ -62,7 +62,8 @@
 		<script src="scripts/app.js"></script>
 		<script src="scripts/controllers/main.js"></script>
 		<script src="scripts/controllers\main.js"></script>
-		<script src="scripts/controllers\homescreen.js"></script>
+		<script src="scripts/controllers\timeAndDate.js"></script>
+<script src="scripts/directives\resize.js"></script>
 		<!-- endbuild -->
 </body>
 </html>
