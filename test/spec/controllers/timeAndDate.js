@@ -16,6 +16,8 @@ describe('Controller: TimeanddateCtrl', function () {
 		});
 	}));
 
+	//TODO: Add unit tests
+
 	/*it('should attach a list of awesomeThings to the scope', function () {
 		expect(scope.timeNow).toBe(3);
 	});*/

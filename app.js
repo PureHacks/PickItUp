@@ -6,7 +6,9 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , sys = require('sys')
+  , exec = require('child_process').exec
 
 var app = express();
 
@@ -33,6 +35,13 @@ else {
 }
 
 app.get('/', routes.index);
+app.get('/send', function(req, res){//sendnumber
+  function puts(error, stdout, stderr) {
+   //sys.puts(stdout) 
+    res.end(stdout);
+  }
+  exec("ls -la", puts);
+});
 
 module.exports = app;
 

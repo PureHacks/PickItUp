@@ -12,6 +12,8 @@ describe('Directive: resize', function () {
 		scope = $rootScope.$new();
 	}));
 
+	//TODO: Add unit tests
+	
 	/*it('should change height', inject(function ($compile, $window) {
 		element = angular.element('<resize></resize>');
 		element = $compile(element)(scope);
