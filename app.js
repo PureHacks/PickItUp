@@ -21,8 +21,9 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(express.favicon(__dirname + '/favicon.ico')); 
 
-if ('production' !== process.env.status) {
+if ('production' !== process.env.NODE_ENV) {
   // development only
   app.set('views', __dirname + '/app');
   app.use(express.static(path.join(__dirname, 'app')));
@@ -34,17 +35,48 @@ else {
   app.use(express.static(path.join(__dirname, 'dist')));
 }
 
+
+var pickupOrderNumbers = [];
+var pickupOrderIndex = 0;
+var displayNumberTime = 3000; //in ms
+
 app.get('/', routes.index);
-app.get('/send', function(req, res){//sendnumber
-  function puts(error, stdout, stderr) {
-   //sys.puts(stdout) 
-    res.end(stdout);
+
+app.post('/orderReady', function(req, res){//sendnumber
+  
+  var orderNumber = req.body.orderNumber;
+  if(pickupOrderNumbers.indexOf(orderNumber) == -1){
+    pickupOrderNumbers.push(orderNumber);
   }
-  exec("ls -la", puts);
+  res.send({ orderNumber: orderNumber , type : 'added' });
 });
+
+app.post('/removeOrder', function(req, res){//sendnumber
+  var orderNumber = req.body.orderNumber;
+  var index = pickupOrderNumbers.indexOf(orderNumber);
+  if (index > -1) {
+      pickupOrderNumbers.splice(index, 1);
+  }
+  res.send({ orderNumber: orderNumber , type : 'removed' });
+});
+
+
+var refreshDisplay = function(){
+  if(pickupOrderIndex >=pickupOrderNumbers.length ){
+    pickupOrderIndex = 0;
+  }
+  if(pickupOrderNumbers.length > 0){
+    exec("./output_number.sh "+pickupOrderNumbers[pickupOrderIndex]+" " + displayNumberTime);
+    pickupOrderIndex++;
+  }
+}
+
+setInterval(refreshDisplay,displayNumberTime + 200);
+
+
 
 module.exports = app;
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('Express server listening on port ' + app.get('port') + ' ' + process.env.NODE_ENV);
 });
