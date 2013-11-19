@@ -20,7 +20,8 @@ angular.module('orderDisplayApp')
 
 		$scope.moveToPickup = function(index){
 			var pickUpOrder = $scope.inProgressNumbers.splice(index, 1)[0];
-			$scope.pickUpNumbers.push(pickUpOrder);
+
+			$scope.pickUpNumbers.push(pickUpOrder < 10 ? "0" + pickUpOrder : pickUpOrder);
 			$http.post('/orderReady', {'orderNumber' : pickUpOrder}).success(function(){
 				console.log('ready for pickup', pickUpOrder);
 			});

@@ -66,7 +66,7 @@ var refreshDisplay = function(){
     pickupOrderIndex = 0;
   }
   if(pickupOrderNumbers.length > 0){
-    exec("./output_number.sh "+pickupOrderNumbers[pickupOrderIndex]+" " + displayNumberTime);
+    exec(__dirname + "/output_number.sh "+pickupOrderNumbers[pickupOrderIndex]+" " + displayNumberTime);
     pickupOrderIndex++;
   }
 }

@@ -1,0 +1,1 @@
+sudo /home/pi/PickMeUp/output_number $1 $2
