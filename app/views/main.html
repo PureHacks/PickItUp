@@ -11,19 +11,16 @@
 
 <div class="main-wrapper">
 	<div class="row lists-holder">
-		<div class="order-in-progress-holder list-holder" resize>
-			<div class="list-bg"></div>
-			<ul style="min-height : {{screenHeight - 367}}px;">
+		<div class="order-in-progress-holder list-holder six" resize>
+			<ul style="min-height : {{screenHeight - 342}}px;">
 				<li ng-repeat="inProgressNumber in inProgressNumbers">	{{inProgressNumber}} <button ng-click="moveToPickup($index)" class="ready-for-pickup">Ready to Go<i></i></button></li>
 			</ul>	
 				
 		</div>
 
 
-		<div class="order-pickup-holder list-holder" resize>
-
-			<div class="list-bg"></div>
-			<ul style="min-height : {{screenHeight - 367}}px;">
+		<div class="order-pickup-holder list-holder six" resize>
+			<ul style="min-height : {{screenHeight - 342}}px;">
 				<li ng-repeat="pickUpNumber in pickUpNumbers">{{pickUpNumber}} <button ng-click="deleteOrder($index)" class="delete">Picked Up<i></i></button></li>
 			</ul>
 		</div>

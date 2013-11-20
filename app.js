@@ -21,7 +21,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.favicon(__dirname + '/favicon.ico')); 
+
 
 if ('production' !== process.env.NODE_ENV) {
   // development only
@@ -35,6 +35,8 @@ else {
   app.use(express.static(path.join(__dirname, 'dist')));
 }
 
+
+app.use(express.favicon(__dirname + 'favicon.ico')); 
 
 var pickupOrderNumbers = [];
 var pickupOrderIndex = 0;
