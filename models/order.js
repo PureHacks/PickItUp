@@ -4,14 +4,13 @@ function Order(orderNumber) {
 	this.orderCreated = new Date();
 	this.orderCompleted = undefined;
 	this.orderServed = undefined;
-}
 
-Order.prototype.toCompleted = function() {
-	this.orderCompleted = new Date();
-};
-
-Order.prototype.toServed = function() {
-	this.orderServed = new Date();
+	this.toCompleted = function() {
+		this.orderCompleted = new Date();
+	};
+	this.toServed = function() {
+		this.orderServed = new Date();
+	};
 };
 
 module.exports = Order;

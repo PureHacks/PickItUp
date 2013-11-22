@@ -4,11 +4,11 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , http = require('http')
-  , path = require('path')
-  , sys = require('sys')
-  , exec = require('child_process').exec
+	, routes = require('./routes')
+	, http = require('http')
+	, path = require('path')
+	, sys = require('sys')
+	, orders = require('./routes/orders')
 
 var app = express();
 
@@ -24,61 +24,31 @@ app.use(app.router);
 
 
 if ('production' !== process.env.NODE_ENV) {
-  // development only
-  app.set('views', __dirname + '/app');
-  app.use(express.static(path.join(__dirname, 'app')));
-  app.use(express.errorHandler());
+	// development only
+	app.set('views', __dirname + '/app');
+	app.use(express.static(path.join(__dirname, 'app')));
+	app.use(express.errorHandler());
 }
 else {
-  // production
-  app.set('views', __dirname + '/dist');
-  app.use(express.static(path.join(__dirname, 'dist')));
+	// production
+	app.set('views', __dirname + '/dist');
+	app.use(express.static(path.join(__dirname, 'dist')));
 }
 
 
 app.use(express.favicon(__dirname + 'favicon.ico')); 
 
-var pickupOrderNumbers = [];
-var pickupOrderIndex = 0;
-var displayNumberTime = 3000; //in ms
-
 app.get('/', routes.index);
-
-app.post('/orderReady', function(req, res){//sendnumber
-  
-  var orderNumber = req.body.orderNumber;
-  if(pickupOrderNumbers.indexOf(orderNumber) == -1){
-    pickupOrderNumbers.push(orderNumber);
-  }
-  res.send({ orderNumber: orderNumber , type : 'added' });
-});
-
-app.post('/removeOrder', function(req, res){//sendnumber
-  var orderNumber = req.body.orderNumber;
-  var index = pickupOrderNumbers.indexOf(orderNumber);
-  if (index > -1) {
-      pickupOrderNumbers.splice(index, 1);
-  }
-  res.send({ orderNumber: orderNumber , type : 'removed' });
-});
-
-
-var refreshDisplay = function(){
-  if(pickupOrderIndex >=pickupOrderNumbers.length ){
-    pickupOrderIndex = 0;
-  }
-  if(pickupOrderNumbers.length > 0){
-    exec(__dirname + "/output_number.sh "+pickupOrderNumbers[pickupOrderIndex]+" " + displayNumberTime);
-    pickupOrderIndex++;
-  }
-}
-
-setInterval(refreshDisplay,displayNumberTime + 200);
+app.get('/order/all', orders.serve);
+app.post('/order/create', orders.create);
+app.post('/order/:orderNumber/ready', orders.complete);
+app.post('/order/:orderNumber/picked-up', orders.serve);
+//app.get('/orders', routes.orders);
 
 
 
 module.exports = app;
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port') + ' ' + process.env.NODE_ENV);
+	console.log('Express server listening on port ' + app.get('port') + ' ' + process.env.NODE_ENV);
 });
