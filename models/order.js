@@ -11,6 +11,14 @@ function Order(orderNumber) {
 	this.toServed = function() {
 		this.orderServed = new Date();
 	};
+
+	this.toJson = function(){
+		return {
+			"orderNumber" : this.orderNumber
+			,"orderCreated" : this.orderCreated.toJSON()
+			,"orderCompleted" : this.orderCompleted ? this.orderCompleted.toJSON() : undefined
+		};
+	}
 };
 
 module.exports = Order;

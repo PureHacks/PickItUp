@@ -21,7 +21,7 @@ function Orders(){
 
 	this.getOrder = function(orderNumber) {
 		if (orderNumber){
-			var order = this.orders.filter(function(o){return o.orderNumber == orderNumber});
+			var order = this.orders.filter(function(o){return o.orderNumber == orderNumber;});
 			if(order.length > 0){
 				return order[0];
 			}			
@@ -29,8 +29,12 @@ function Orders(){
 		return undefined;
 	};
 
-	this.getNumOrders = function(order) {
+	this.getNumOrders = function() {
 		return this.orders.length;
+	};
+
+	this.toJson = function() {
+		return this.orders.map(function(o){return o ? o.toJson() : false;});
 	};
 };
 

@@ -8,7 +8,8 @@ var express = require('express')
 	, http = require('http')
 	, path = require('path')
 	, sys = require('sys')
-	, orders = require('./routes/orders')
+	, orders = require('./routes/orders');
+
 
 var app = express();
 
@@ -27,19 +28,20 @@ if ('production' !== process.env.NODE_ENV) {
 	// development only
 	app.set('views', __dirname + '/app');
 	app.use(express.static(path.join(__dirname, 'app')));
+	app.use(express.favicon(__dirname + '/app/assets/img/favicon.ico'));
 	app.use(express.errorHandler());
 }
 else {
 	// production
 	app.set('views', __dirname + '/dist');
 	app.use(express.static(path.join(__dirname, 'dist')));
+	app.use(express.favicon(__dirname + '/app/assets/img/favicon.ico'));
 }
 
 
-app.use(express.favicon(__dirname + 'favicon.ico')); 
 
 app.get('/', routes.index);
-app.get('/order/all', orders.serve);
+app.get('/order/all', orders.getAllOrders);
 app.post('/order/create', orders.create);
 app.post('/order/:orderNumber/ready', orders.complete);
 app.post('/order/:orderNumber/picked-up', orders.serve);
@@ -49,6 +51,6 @@ app.post('/order/:orderNumber/picked-up', orders.serve);
 
 module.exports = app;
 
-http.createServer(app).listen(app.get('port'), function(){
+var io = require('socket.io').listen(http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port') + ' ' + process.env.NODE_ENV);
-});
+}));

@@ -16,8 +16,11 @@ describe('Controller: MainCtrl', function () {
 		var $controller = $injector.get('$controller');
 
 		$httpBackend = $injector.get('$httpBackend');
-		$httpBackend.when('POST', '/orderReady').respond({ orderNumber: 0 , type : 'added' });
-		$httpBackend.when('POST', '/removeOrder').respond({ orderNumber: 0 , type : 'removed' });
+		$httpBackend.when('GET', '/order/all').respond({ orderNumber: 0 , type : 'added' });
+		$httpBackend.when('POST', '/order/create').respond({ orderNumber: 0 , type : 'added' });
+		$httpBackend.when('POST', '/order/:orderNumber/ready').respond({ orderNumber: 0 , type : 'added' });
+		$httpBackend.when('POST', '/order/:orderNumber/picked-up').respond({ orderNumber: 0 , type : 'removed' });
+		app.get('/', routes.index);
 
 		MainCtrl = $controller('MainCtrl', {
 			$scope: scope

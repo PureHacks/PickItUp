@@ -62,7 +62,8 @@ exports.serve = function(req, res) {
 };
 
 exports.getAllOrders = function(req, res) {
-	res.send({ ordersCompleted: ordersCompleted , ordersInProgress : ordersInProgress});
+	console.log( ordersInProgress.toJson());
+	res.send({ordersInProgress : ordersInProgress.toJson(), ordersCompleted: ordersCompleted.toJson()});
 };
 
 
@@ -74,7 +75,7 @@ var refreshDisplay = function(){
 		exec(__dirname + "/output_number.sh "+ordersCompleted[ordersCompletedIndex]+" " + displayNumberTime);
 		ordersCompletedIndex++;
 	}
-}
+};
 
 setInterval(refreshDisplay, displayNumberTime + 200);
 
